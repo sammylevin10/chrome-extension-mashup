@@ -1,3 +1,28 @@
+"use strict";
+
+var url = "images/rainbow.png";
+
+// function replace() {
+// 	var images = document.getElementsByTagName("img");
+// 	for (var i = 0; i < images.length; i++) {
+// 		images[i].src = url;
+// 	}
+// }
+//
+// chrome.storage.sync.get({
+// 	enabled: false,
+// 	url: ""
+// }, function(items) {
+// 	if (items.enabled) {
+// 		url = items.url;
+// 		var css = document.createElement("style");
+// 		css.innerHTML = "img { content: url(\"" + url + "\") !important; }";
+// 		document.body.appendChild(css);
+// 		window.setInterval(replace, 3000);
+// 		replace();
+// 	}
+// });
+
 // A2Z F17
 // Daniel Shiffman
 // http://shiffman.net/a2z
@@ -29,6 +54,41 @@ for (var i = 0; i < avatars.length; i++) {
 for (var j = 0; j < gravatars.length; j++) {
   swapImg(gravatars[j]);
 }
+
+var newimg = chrome.extension.getURL("images/rainbow.png");
+
+console.log("Here we go");
+
+replace();
+
+function replace() {
+	var images = document.getElementsByTagName("img");
+	for (var i = 0; i < images.length; i++) {
+		images[i].src = "images/rainbow.png";
+    console.log(i);
+	}
+}
+
+// chrome.storage.sync.get({
+// 	enabled: false,
+// 	url: ""
+// }, function(items) {
+// 	if (items.enabled) {
+// 		url = items.url;
+// 		var css = document.createElement("style");
+// 		css.innerHTML = "img { content: url(\"" + url + "\") !important; }";
+// 		document.body.appendChild(css);
+// 		window.setInterval(replace, 3000);
+// 		replace();
+// 	}
+// });
+
+
+
+// for(var i = 0; i < ilist.length; i++) {
+//   ilist[i].src = newimg;
+//   console.log(i);
+// }
 
 // Change the image to a file that is part of this extension
 // The file must be made available in manifest.json

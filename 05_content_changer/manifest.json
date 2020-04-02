@@ -5,10 +5,7 @@
   "description": "This extensions alters the look and content of a github page.",
   "content_scripts": [
     {
-      "matches": [
-        "http://github.com/*",
-        "https://github.com/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
   ],
